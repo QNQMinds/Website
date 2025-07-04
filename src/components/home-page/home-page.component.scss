@@ -1,0 +1,41 @@
+.registerButton{
+    width: 100%;
+    background: #135b81;
+    color: white;
+    font-size: 14px;
+}
+
+
+.QNQTitle{
+        color: #105b81;
+    font-weight: 700;
+    font-family: "PP-Acma";
+    font-size: 5rem;
+        line-height: 85px;
+}
+
+@font-face {
+  font-family: 'PP-Acma';
+  src: url('../../assets/fonts/PPAcma-Light.woff2');
+}
+
+.tagLine{
+    color: #ea8113;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.blink-text {
+  animation: blink 1s infinite;
+  color: #ea8113; 
+  font-size: 14px;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

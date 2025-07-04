@@ -1,0 +1,50 @@
+// .navBar {
+//     height: 90px;
+//     // backdrop-filter: blur(5px);
+//     // -webkit-backdrop-filter: blur(17px);
+//     background: white;
+//   position: relative;
+//   z-index: 1050;
+//       box-shadow: 0 14px 4px #0000, 0 9px 4px #00000003, 0 5px 3px #0000000d, 0 2px 2px #00000017, 0 1px 1px #0000001a !important;
+//     outline: none !important;
+
+
+    .navBar {
+height: 90px;
+  position: relative;
+  z-index: 1050;
+  background: rgba(255, 255, 255, 0.25); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 0 2rem;
+}
+
+
+
+.logo {
+    background-image: url('../../assets/images/QNQ-logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 70px;
+
+}
+
+.Navigation{
+ background: #ffffff8c;
+    padding: 10px 13px;
+    border-radius: 27px;
+    text-align: center;
+    justify-content: center;
+}
+
+.Navigation a{
+        border: 1px solid double;
+    border-radius: 20px;
+    padding: 5px 15px;
+    box-shadow: 0 14px 4px #0000, 0 9px 4px #00000003, 0 5px 3px #0000000d, 0 2px 2px #00000017, 0 1px 1px #0000001a !important;
+    outline: none !important;
+}

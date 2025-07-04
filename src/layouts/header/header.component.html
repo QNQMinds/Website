@@ -1,0 +1,39 @@
+<nav class="navBar navbar navbar-expand-lg navbar-light  px-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- Logo -->
+    <div class="navbar-brand logo">
+      
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="d-none d-lg-flex gap-4 Navigation">
+      <a class="nav-link" routerLink="/home">Home</a>
+      <a class="nav-link" routerLink="/about">About Us</a>
+      <a class="nav-link" routerLink="/about">Courses / Services </a>
+      <a class="nav-link" routerLink="/contact">Contact Us</a>
+      <a class="nav-link" routerLink="/contact">FAQ</a>
+      <a class="nav-link" routerLink="/contact">Login / Signup</a>
+    </div>
+
+    <!-- WhatsApp (always visible on md+) -->
+    <div class="d-none d-md-block">
+      <span class="text-muted">📞 +91-9876543210</span>
+    </div>
+
+    <!-- Mobile: Three Dot Menu -->
+    <div class="d-lg-none dropdown">
+      <button class="btn btn-light" type="button" id="mobileMenu" data-bs-toggle="dropdown" aria-expanded="false">
+        &#8942; <!-- Unicode for vertical ellipsis (⋮) -->
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="mobileMenu">
+        <li><a class="dropdown-item" routerLink="/home">Home</a></li>
+        <li><a class="dropdown-item" routerLink="/about">About</a></li>
+        <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><span class="dropdown-item text-muted">📞 +91-9876543210</span></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
