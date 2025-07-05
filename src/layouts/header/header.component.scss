@@ -9,22 +9,22 @@
 //     outline: none !important;
 
 
-    .navBar {
-height: 90px;
+.navBar {
+  height: 90px;
   position: relative;
   z-index: 1050;
-  background: rgba(255, 255, 255, 0.25); 
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   padding: 0 2rem;
 }
 
 
 
 .logo {
-    background-image: url('../../assets/images/QNQ-logo.png');
+  background-image: url('../../assets/images/QNQ-logo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,18 +33,51 @@ height: 90px;
 
 }
 
-.Navigation{
- background: #ffffff8c;
-    padding: 10px 13px;
-    border-radius: 27px;
-    text-align: center;
-    justify-content: center;
+.Navigation {
+  position: absolute;
+  right: 15%;
+  text-align: center;
+  justify-content: center;
 }
 
-.Navigation a{
-        border: 1px solid double;
-    border-radius: 20px;
-    padding: 5px 15px;
-    box-shadow: 0 14px 4px #0000, 0 9px 4px #00000003, 0 5px 3px #0000000d, 0 2px 2px #00000017, 0 1px 1px #0000001a !important;
-    outline: none !important;
+.Navigation a {
+  border: 1px solid double;
+  outline: none !important;
+  color: #206998;
+  font-size: 18px;
+}
+
+.custom-link {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.custom-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #007bff;
+  /* your brand color */
+  transition: width 0.3s ease;
+}
+
+.custom-link:hover::after {
+  width: 100%;
+}
+
+/* Show underline when the route is active */
+.custom-link.active::after {
+  width: 100%;
+}
+
+
+.phoneText {
+  color: #1f6796;
+  font-size: 18px;
 }
