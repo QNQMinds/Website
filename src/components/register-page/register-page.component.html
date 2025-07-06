@@ -1,0 +1,63 @@
+<div class="register-wrapper d-flex justify-content-center align-items-center">
+  <div class="glass-card p-4 shadow">
+    <h3 class="text-center mb-4">📝 Register</h3>
+        <form [formGroup]="registerForm">
+            <label for="UserName">Name :</label>
+            <input type="text" class="form-control" formControlName="userName" placeholder="Enter your name">
+
+            @if (registerFormInvalid && registerForm.get('userName')?.invalid) {
+            <span class="small-text">Name is required</span>
+            }
+
+
+            <div>
+                <label for="Address" class="mt-2">Address :</label>
+                <input type="text" class="form-control" formControlName="address" placeholder="Your full address">
+                @if (registerFormInvalid && registerForm.get('address')?.invalid) {
+                <span class="small-text">Address is required</span>
+                }
+
+            </div>
+
+            <div>
+                <label for="MobileNo" class="mt-2">MobileNo :</label>
+                <input type="text" class="form-control" formControlName="mobileNo" placeholder="Mobile No">
+                @if (registerFormInvalid && registerForm.get('mobileNo')?.invalid) {
+                <span class="small-text">MobileNo is required</span>
+                }
+            </div>
+
+            <div>
+                <label for="Email" class="mt-2">Email :</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="you@example.com">
+                @if (registerFormInvalid && registerForm.get('email')?.invalid) {
+                <span class="small-text">Email is required</span>
+                }
+                @if (registerForm.get('email')?.value && (registerFormInvalid ||
+                registerForm.get('email')?.hasError('pattern'))) {
+                <span class="small-text">Invalid Email</span>
+                }
+
+            </div>
+
+            <div>
+                <label for="age" class="mt-2">Age :</label>
+                <input type="number" class="form-control" formControlName="age" placeholder="Your age">
+                @if (registerFormInvalid && registerForm.get('age')?.invalid) {
+                <span class="small-text">Age is required</span>
+                }
+            </div>
+
+            <div>
+                <label for="Profession" class="mt-2">Profession :</label>
+                <input type="text" class="form-control" formControlName="profession" placeholder="e.g., Developer, Trader">
+                @if (registerFormInvalid && registerForm.get('profession')?.invalid) {
+                <span class="small-text">Profession is required</span>
+                }
+            </div>
+            <button type="button" class="btn btn-primary w-100 mt-2" (click)="registerSubmit()">Register</button>
+        </form>
+    </div>
+</div>
+
+

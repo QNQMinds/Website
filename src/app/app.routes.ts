@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomePageComponent } from '../components/home-page/home-page.component';
 import { CourcesPageComponent } from '../components/cources-page/cources-page.component';
 import { AboutComponent } from '../components/about/about.component';
+import { RegisterPageComponent } from '../components/register-page/register-page.component';
 
 export const routes: Routes = [
     {
@@ -15,7 +16,7 @@ export const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: 'course', component: CourcesPageComponent },
       { path: 'about', component: AboutComponent },
-    //   { path: 'contact', component: ContactComponent },
+      { path: 'register', component: RegisterPageComponent }
     ],
   },
 ];
