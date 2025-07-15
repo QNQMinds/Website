@@ -30,7 +30,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/vishal-website/browser
+          local-dir: ./dist/vishal-website/browser/
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
 
   notify-success:
