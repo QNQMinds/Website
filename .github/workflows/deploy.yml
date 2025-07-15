@@ -1,4 +1,4 @@
-name:  Deploy website
+name: deploy QNQMinds
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name:  Build Angular Universal App
+      - name: Build Angular Universal App
         run: npm run build -- --configuration production
 
       - name:  Deploy to Shared Hosting via FTP
@@ -32,3 +32,61 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/vishal-website/browser
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+
+  notify-success:
+    needs: build-and-deploy
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📧 Email on Success
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: mail.qnqminds.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "✅ SUCCESS: Angular App Deployed"
+          to: mailtovishal01@gmail.com.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: |
+            ✅ Deployment succeeded!
+            Your Angular 18 app has been successfully deployed via GitHub Actions.
+
+  notify-failure:
+    needs: build-and-deploy
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Email on Failure
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: mail.qnqminds.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "FAILURE: Angular Deployment Failed"
+          to: mailtovishal01@gmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: |
+            ❌ Deployment failed!
+            Please check the GitHub Actions logs for more info.
+
+  notify-cancelled:
+    needs: build-and-deploy
+    if: cancelled()
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⚠️ Email on Cancelled
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: mail.qnqminds.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "⚠️ CANCELLED: Angular Deployment Cancelled"
+          to: mailtovishal01@gmail.com
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: |
+            ⚠️ Deployment was cancelled.
+            Please verify if it was intentional.
+
