@@ -17,21 +17,28 @@ jobs:
       - name: ✅ Checkout Code
         uses: actions/checkout@v3
 
-      - name: 🟢 Setup Node.js
+      - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
       - name: 📦 Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
-      - name: 🛠 Build Angular Universal App
-        run: npm run build -- --configuration production
+      - name: 📁 Debug Package Tree
+        run: npm ls || true
 
-      - name: 🔍 Check Build Output (Debug)
-        run: ls -la ./dist/vishal-website/browser/
+      - name: 🛠️ Build Angular App (Verbose)
+        run: npm run build -- --configuration production --verbose
 
-      - name: 🚀 Deploy to Shared Hosting via FTP
+      - name: 🧾 List dist folder
+        run: |
+          echo "🔍 Listing dist/vishal-website/"
+          ls -la dist/vishal-website/
+          echo "🔍 Listing dist/vishal-website/browser/"
+          ls -la dist/vishal-website/browser/
+
+      - name: 🚀 Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
