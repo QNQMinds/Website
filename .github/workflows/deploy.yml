@@ -1,2 +1,44 @@
-- name: 🚀 Start Check
-  run: echo "Build job started"
+name: deploy QNQMinds
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 🚀 Start Check
+        run: echo "Build job started ✅"
+
+      - name: ✅ Checkout Code
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: 🛠️ Build Angular App
+        run: npm run build -- --configuration production
+
+      - name: 📁 Check dist/ output
+        run: ls -laR dist/
+
+      - name: 🚀 Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/vishal-website/browser/
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
