@@ -35,7 +35,9 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-spinner/animations/ball-spin-fade.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -71,6 +73,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+           "options": {
+      "proxyConfig": "src/proxy.conf.json"
+    },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
