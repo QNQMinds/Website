@@ -11,25 +11,27 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15  
-
+    timeout-minutes: 15
 
     steps:
-      - name: Checkout Code
+      - name: ✅ Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Install Dependencies
+      - name: 📦 Install Dependencies
         run: npm install
 
-      - name: Build Angular Universal App
+      - name: 🛠 Build Angular Universal App
         run: npm run build -- --configuration production
 
-      - name:  Deploy to Shared Hosting via FTP
+      - name: 🔍 Check Build Output (Debug)
+        run: ls -la ./dist/vishal-website/browser/
+
+      - name: 🚀 Deploy to Shared Hosting via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -43,7 +45,7 @@ jobs:
     if: success()
     runs-on: ubuntu-latest
     steps:
-      - name: 📧 Email on Success
+      - name: ✅ Email on Success
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: mail.qnqminds.com
@@ -51,7 +53,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "✅ SUCCESS: Angular App Deployed"
-          to: mailtovishal01@gmail.com.com
+          to: mailtovishal01@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
             ✅ Deployment succeeded!
@@ -62,14 +64,14 @@ jobs:
     if: failure()
     runs-on: ubuntu-latest
     steps:
-      - name: Email on Failure
+      - name: ❌ Email on Failure
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: mail.qnqminds.com
           server_port: 465
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "FAILURE: Angular Deployment Failed"
+          subject: "❌ FAILURE: Angular Deployment Failed"
           to: mailtovishal01@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
@@ -94,4 +96,3 @@ jobs:
           body: |
             ⚠️ Deployment was cancelled.
             Please verify if it was intentional.
-
