@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "✅ SUCCESS: Angular App Deployed"
-          to: mailtovishal01@gmail.com
+          to: qnqmind@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
             ✅ Deployment succeeded!
@@ -79,7 +79,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "❌ FAILURE: Angular Deployment Failed"
-          to: mailtovishal01@gmail.com
+          to: qnqmind@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
             ❌ Deployment failed!
@@ -98,7 +98,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "⚠️ CANCELLED: Angular Deployment Cancelled"
-          to: mailtovishal01@gmail.com
+          to: qnqmind@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
             ⚠️ Deployment was cancelled.
