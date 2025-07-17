@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://16.170.142.127:3000/api/',
+  apiUrl: 'https://api.qnqminds.com/api/',
   EncryptionOn_Off: false,
   EncryptionKey: 'secret'
 };
