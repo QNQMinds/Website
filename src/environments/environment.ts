@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
-  apiUrl: '/api/',
+  production: true,
+  apiUrl: 'http://16.170.142.127:3000/api/',
   EncryptionOn_Off: false,
   EncryptionKey: 'secret'
 };
