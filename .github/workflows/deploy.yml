@@ -30,7 +30,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: 🛠️ Build Angular App
-        run: npm run build -- --configuration production
+        run: npm run build:prod
 
       - name: 📁 Check dist/ output
         run: ls -laR dist/
