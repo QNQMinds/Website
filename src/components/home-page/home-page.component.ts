@@ -4,11 +4,13 @@ import { AboutComponent } from '../about/about.component';
 import { CourcesPageComponent } from '../cources-page/cources-page.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HeaderComponent } from '../../layouts/header/header.component';
+import { TestimonialsComponent } from '../testimonials/testimonials.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [AboutComponent,CourcesPageComponent,CarouselModule],
+  imports: [AboutComponent,CourcesPageComponent,CarouselModule,HeaderComponent,TestimonialsComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })

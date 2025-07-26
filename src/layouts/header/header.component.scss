@@ -7,3 +7,9 @@
     background-color: rgba(10,10,35,1);
   }
 }
+
+
+.navbar .nav-item.active .nav-link {
+  font-weight: bold;
+  color: #ffc107 !important;
+}
