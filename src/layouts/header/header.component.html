@@ -22,8 +22,19 @@
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="./assets/images/QNQ-logo.png" alt="logo" style="width: 60px;"></a>
-    <div class="collapse navbar-collapse">
+    <!-- Logo -->
+    <a class="navbar-brand" (click)="scrollTo('home')">
+      <img src="./assets/images/QNQ-logo.png" alt="logo" style="width: 60px;">
+    </a>
+
+    <!-- Toggler for mobile menu -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" [class.active]="currentSectionToChild === 'home'">
           <a class="nav-link" (click)="scrollTo('home')">Home</a>
@@ -37,14 +48,15 @@
         <li class="nav-item" [class.active]="currentSectionToChild === 'testimonial'">
           <a class="nav-link" (click)="scrollTo('testimonial')">Testimonial</a>
         </li>
-        <li>
-          <a href="https://wa.me/919421675033" target="_blank" rel="noopener">
-            <img  src="./assets/images/WhatsApp.svg.webp" alt="WhatsApp" style="    width: 35px;
-    margin-left: 30px;">
-    </a>
-          
+        <!-- WhatsApp Link -->
+        <li class="nav-item d-flex align-items-center mt-2 mt-lg-0 ms-lg-3">
+          <a href="https://wa.me/919421675033" target="_blank" rel="noopener" class="d-flex align-items-center text-warning text-decoration-none">
+            <img src="assets/images/WhatsApp.svg.webp" alt="WhatsApp" style="width: 25px;"> 
+            <span class="ms-2">+91 9421675033</span>
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
