@@ -6,11 +6,12 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HeaderComponent } from '../../layouts/header/header.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
+import { FooterComponent } from '../../layouts/footer/footer.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [AboutComponent,CourcesPageComponent,CarouselModule,HeaderComponent,TestimonialsComponent],
+  imports: [AboutComponent,CourcesPageComponent,CarouselModule,HeaderComponent,TestimonialsComponent,FooterComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
