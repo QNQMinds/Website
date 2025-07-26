@@ -26,13 +26,16 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" [class.active]="currentSectionToChild === 'home'">
-          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" (click)="scrollTo('home')">Home</a>
         </li>
         <li class="nav-item" [class.active]="currentSectionToChild === 'about'">
-          <a class="nav-link" href="#about">About Us</a>
+          <a class="nav-link" (click)="scrollTo('about')">About Us</a>
         </li>
         <li class="nav-item" [class.active]="currentSectionToChild === 'course'">
-          <a class="nav-link" href="#course">Courses</a>
+          <a class="nav-link" (click)="scrollTo('course')">Courses</a>
+        </li>
+        <li class="nav-item" [class.active]="currentSectionToChild === 'testimonial'">
+          <a class="nav-link" (click)="scrollTo('testimonial')">Testimonial</a>
         </li>
         <li>
           <a href="https://wa.me/919421675033" target="_blank" rel="noopener">

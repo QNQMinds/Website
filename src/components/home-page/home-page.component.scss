@@ -142,7 +142,7 @@ html {
 }
 
 .hero-section {
-  height: 100vh;
+  margin-top: 4.8%;
   background: url('../../assets/sharemarket.avif') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
@@ -155,10 +155,7 @@ html {
     z-index: 0;
   }
 
-  .text-center {
-    position: relative;
-    z-index: 2;
-  }
+
 
   .glow-btn {
     animation: pulseGlow 2s infinite;
@@ -201,5 +198,78 @@ html {
   }
 }
 
+.coroselFont{
+  font-size: 18px;
+    font-weight: 500;
+    color: #ffaa00;
+}
+.carousel-slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
 
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  padding: 1rem 2rem;
+  width: 90%;
+  max-width: 700px;
+}
+
+.glow-btn {
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.6);
+  transition: transform 0.3s ease;
+}
+.glow-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .overlay-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .overlay-text p {
+    font-size: 1rem;
+  }
+
+  .overlay-text h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .overlay-text {
+    top: 55%;
+    padding: 1rem;
+    left: 5%;
+  }
+
+  .glow-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .overlay-text h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.bg{
+  background: #dc3545;
+    color: white;
+    height: 100px;
+}

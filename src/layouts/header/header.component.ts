@@ -10,4 +10,10 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
  @Input() currentSectionToChild!: string;
+ scrollTo(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
