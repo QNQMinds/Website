@@ -1,79 +1,74 @@
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 col-sm-12 pt-3">
-            <div class="QNQTitle">
-                QNQ Minds Trading Classes 
-            </div>
-            <div class="tagLine">
-                Trade with confidence, Grow with peace...
-            </div>
-            <div style="    margin-top: 12px;
-    font-style: italic;">
-
-                <b>Our Vision:</b>
-                To help every trader develop confidence, clarity, and control so they make decisions without fear
-                We aim to build not just traders, but stable, sensible, and self-aware market warriors
-            </div>
-
-        </div>
-
-        <!-- Right Column -->
-        <div class="col-md-6 col-sm-12 mt-3">
-           <div class="border rounded shadow-md courseCard" style=" border: 3px solid #ea8113 !important;">
-                <div class="row mb-1 align-items-start p-3 ">
-                    <div class="col-md-8 col-sm-12">
-
-
-                    <span class="fw-bold" style="font-size: 16px;">Course Name: Brush Up Course
-                        <!-- <span class="blink-text">Free Course</span> -->
-                    </span>
-                    <div class="text-muted small">
-                        Mindset in Market Brush-Up Course by QNQ Share Market
-                    </div>
-                    <div><b>Price: <span style=" text-decoration: line-through;">₹3000</span><span
-                                class="ms-2 blink-text" style="font-size: 16px !important;">Free</span></b></div>
-                                <div>
-                            📅 Duration: <b>5 Days(1 Hour Daily)</b>
-
-                        </div>
-                        <div>🌐 Language: <b>Marathi/Hindi/English</b>
-                        </div>
-                        <div>🏠 Available: <b>Offline & Online</b></div>
-                    </div>
-                    <div class="col-md-4 col-sm-12" style="display: flex; justify-content: center; align-items: center;">
-
-
-                        <!-- <iframe width="170" height="140" src="https://www.youtube.com/embed/O8M-oCQV4lM"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe> -->
-                        <img src="assets/images/video-icon-image.jpg" alt="video" style="height: 205px;">
-
-                    </div>
-
-                </div>
-                <hr>
-                <div class="mb-3 align-items-start" style="padding: 0 15px;">
-
-                    <div>
-                        <b>What You'll Learn:</b>
-                        <ul>
-                            <li>Developing a strong trader’s mindset.
-                            </li>
-                            <li>How to see the market with a fresh perspective.</li>
-                            <li>Replacing bad trading habits with powerful thought patterns.</li>
-                            <li>Basic theoretical concepts every trader must know.</li>
-                            <li>Light practical approach to observing market behavior.</li>
-                        </ul>
-                    </div>
-
-                    <div class="pe-3 registerDiv mt-2">
-                    <button type="button" class="registerButton" (click)="register()" style="width: 50% !important">Register</button>
-                </div>
-                </div>
-            </div>
-
-        </div>
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark shadow">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="./assets/images/QNQ-logo.png" alt="logo" style="width: 50px;"></a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" [class.active]="currentSection === 'home'">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item" [class.active]="currentSection === 'about'">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item" [class.active]="currentSection === 'course'">
+          <a class="nav-link" href="#course">Courses</a>
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
+</nav>
+
+<!-- Sections -->
+<section id="home" class="hero-section d-flex align-items-center justify-content-center text-white">
+  <div class="text-center  fade-up">
+    <!-- <h1 class="display-3 fw-bold">Welcome to <span class="text-warning">QNQ Minds Share Market Classes </span></h1>
+    <p class="lead mb-4">Trade with confidence, Grow with peace...</p>
+    <a href="#course" class="btn btn-warning btn-lg px-4 py-2 glow-btn">Explore Courses</a>
+    <div class="scroll-down mt-5">
+      <span class="mouse"></span>
+    </div> -->
+    <owl-carousel-o [options]="customOptions">
+      @for (img of images; track $index) {
+        <ng-template carouselSlide >
+        <p style="color: white;">{{img}}</p>
+      </ng-template>
+      }
+      
+    </owl-carousel-o>
+  </div>
+</section>
+
+
+<section id="about" class="aboutsection section text-white text-center">
+  <div class="container animate-on-scroll slide-left aboutsection-content">
+    <!-- <h2 class="mb-4 display-3">Who We Are</h2>
+    <p class="lead">We provide expert share market education with real strategies, live training & mentorship.</p>
+    <div class="d-flex justify-content-around mt-5 text-warning">
+      <div><h3>10+ Years</h3><p>Experience</p></div>
+      <div><h3>5K+</h3><p>Students Trained</p></div>
+      <div><h3>95%</h3><p>Success Rate</p></div>
+    </div> -->
+    <app-about></app-about>
+  </div>
+</section>
+
+
+<section id="course" class="coursesection section bg-secondary">
+  <div class="container  animate-on-scroll zoom-in">
+    <!-- <h2>Our Courses</h2>
+    <div class="row mt-4">
+      @for (c of courses; track c; let i = $index) {
+        <div class="col-md-4">
+          <div class="card h-100 bg-dark text-white shadow-lg course-card" [style.--delay]="(i*0.2)+'s'">
+            <img src="/assets/images/stock-card.jpg" class="card-img-top" alt="Course Image">
+            <div class="card-body">
+              <h5>{{ c.title }}</h5>
+              <p>{{ c.description }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div> -->
+    <app-cources-page></app-cources-page>
+  </div>
+</section>
+

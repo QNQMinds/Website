@@ -1,20 +1,205 @@
-.QNQTitle{
-        color: #105b81;
-    font-weight: 700;
-    font-family: "PP-Acma";
-    font-size: 5rem;
-        line-height: 85px;
+html {
+  scroll-behavior: smooth;
 }
 
-.courseCard{
-    border: 1px solid #ea8113 !important;
-    box-shadow: 0 14px 4px rgba(0, 0, 0, 0), 0 9px 4px rgba(0, 0, 0, 0.0117647059), 0 5px 3px rgba(0, 0, 0, 0.0509803922), 0 2px 2px rgba(0, 0, 0, 0.0901960784), 0 1px 1px rgba(0, 0, 0, 0.1019607843) !important;
-    outline: none !important;
-    background-color: #ffffff66;
+.section {
+  padding-top: 80px; // for navbar spacing
 }
 
-.registerDiv{
-    justify-content: center;
-    display: flex;
-    align-items: center;
+.navbar .nav-item.active .nav-link {
+  font-weight: bold;
+  color: #ffc107 !important;
 }
+
+
+
+
+
+// Fade In from Bottom
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Slide In from Left
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Slide In from Right
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Zoom In
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Flip In
+@keyframes flipIn {
+  from {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible.fade-up {
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-on-scroll.visible.slide-left {
+  animation: slideInLeft 1s ease forwards;
+}
+.animate-on-scroll.visible.slide-right {
+  animation: slideInRight 1s ease forwards;
+}
+.animate-on-scroll.visible.zoom-in {
+  animation: zoomIn 0.9s ease forwards;
+}
+.animate-on-scroll.visible.flip-in {
+  animation: flipIn 1s ease forwards;
+}
+
+
+
+.aboutsection {
+  background-image: url('../../assets/sharemarket-bg.jpg');
+  position: relative;
+  overflow: hidden;
+  
+}
+
+
+.aboutsection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 83%); /* overlay for readability */
+  z-index: 0;
+}
+.aboutsection-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+}
+
+
+.coursesection {
+  background-image: url('../../assets/courcesbg.jpg');
+  position: relative;
+  overflow: hidden;
+   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+.coursesection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 83%); /* overlay for readability */
+  z-index: 0;
+}
+
+.hero-section {
+  height: 100vh;
+  background: url('../../assets/sharemarket.avif') center/cover no-repeat fixed;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 77%);
+    z-index: 0;
+  }
+
+  .text-center {
+    position: relative;
+    z-index: 2;
+  }
+
+  .glow-btn {
+    animation: pulseGlow 2s infinite;
+  }
+
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 10px #ffc107; }
+    50% { box-shadow: 0 0 20px #ffc107; }
+    100% { box-shadow: 0 0 10px #ffc107; }
+  }
+
+  .scroll-down {
+    margin-top: 2rem;
+    .mouse {
+      width: 30px;
+      height: 50px;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .mouse::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scroll 2s infinite;
+    }
+  }
+
+  @keyframes scroll {
+    0% { top: 10px; opacity: 1; }
+    50% { top: 25px; opacity: 0.5; }
+    100% { top: 10px; opacity: 1; }
+  }
+}
+
+
+
