@@ -12,6 +12,12 @@ export class CourcesPageComponent {
   constructor(private router: Router) {
 
   }
+  courses = [
+  { title: 'Beginner Stock Market', description: 'Learn basics, demat, IPOs, and more.' },
+  { title: 'Technical Analysis', description: 'Chart reading, indicators, price action.' },
+  { title: 'Advanced Trading', description: 'Options, strategies, psychology.' },
+];
+
   register() {
     this.router.navigateByUrl('register')
   }
