@@ -12,7 +12,6 @@ export class TestimonialsComponent {
   selectedImage: string = '';
 
     openPopup(image: string) {
-      debugger
     this.selectedImage = image;
     this.isPopupOpen = true;
   }
