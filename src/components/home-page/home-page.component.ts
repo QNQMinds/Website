@@ -11,12 +11,7 @@ import { ContactUsComponent } from '../contact-us/contact-us.component';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-<<<<<<< HEAD
   imports: [AboutComponent,CourcesPageComponent,CarouselModule,HeaderComponent,TestimonialsComponent,FooterComponent,ContactUsComponent,FooterComponent],
-=======
-  imports: [AboutComponent,
-    CarouselModule,CourcesPageComponent,HeaderComponent,TestimonialsComponent,FooterComponent],
->>>>>>> 7c51ac78b98443e21281ffedf80e7ddcd4e05346
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
