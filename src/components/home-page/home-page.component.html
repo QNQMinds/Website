@@ -1,28 +1,40 @@
 <app-header [currentSectionToChild]="currentSection"></app-header>
 <!-- Sections -->
-<section id="home" class="hero-section text-white">
+<section id="home" class="hero-section text-white" style="position: relative;">
+  <div class="d-none d-lg-block">
+  <owl-carousel-o [options]="customOptions">
+    @for (testimonial of testimonials; track $index) {
+    <ng-template carouselSlide>
+      <div class="carousel-slide-wrapper">
+        <img [src]="testimonial.image" alt="home" class="carousel-image" />
+        
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
+  </div>
+  <div class="d-lg-none" style="margin-top: 30%;">
   <owl-carousel-o [options]="customOptions">
     @for (testimonial of testimonials; track $index) {
       <ng-template carouselSlide>
-        <div class="carousel-slide-wrapper">
-          <img [src]="testimonial.image" alt="home" class="carousel-image" />
-          <div class="overlay-text text-center animate__animated animate__fadeInUp">
-            <h1 class="display-5 fw-bold">
-              <div class="text-warning">QNQ Minds</div>
-              <div>Share Market Classes</div>
-            </h1>
-            <p class="lead mb-3">Trade with confidence, Grow with peace...</p>
-            <h2 class="h5 fw-normal text-light">{{ testimonial.text }}</h2>
-            <a href="#course" class="btn btn-warning btn-lg mt-4 px-4 py-2 glow-btn">Explore Courses</a>
-          </div>
+        <div class="testimonial-card">
+          <img [src]="testimonial.image" alt="img" />
+
         </div>
       </ng-template>
     }
   </owl-carousel-o>
+  </div>
+
 
   <div class="scroll-down mt-5 text-center">
+    
+    <a (click)="scroll('course')" class="btn btn-warning btn-lg mt-4 px-4 py-2 glow-btn" style="z-index: 999 !important;
+    position: relative;
+    margin-bottom: 15px;">Explore Courses</a><br>
     <span class="mouse"></span>
   </div>
+
 </section>
 
 
@@ -64,14 +76,15 @@
 
 <section id="testimonial" class="aboutsection section text-white text-center">
   <div class="container animate-on-scroll slide-left aboutsection-content">
-<app-testimonials></app-testimonials>
+    <app-testimonials></app-testimonials>
   </div>
+</section>
 
-  <section id="contact-us" class="aboutsection section text-white text-center">
+<section id="contact-us" class="aboutsection section text-white text-center">
   <div class="container animate-on-scroll slide-left aboutsection-content">
-<app-contact-us></app-contact-us>
+    <app-contact-us></app-contact-us>
   </div>
 </section>
 
 
-<!-- <app-footer ></app-footer> -->
+<app-footer></app-footer>

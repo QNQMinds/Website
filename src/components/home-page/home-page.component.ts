@@ -33,20 +33,16 @@ export class HomePageComponent {
   };
   testimonials = [
     {
-      image: '../../assets/images/Daily Vlogger (1).png',
-      text: '1 TO 1 Mentorship'
-    },
-    {
-      image: '../../assets/images/Daily Vlogger.png',
+      image: '../../assets/images/1.png',
       text: 'Live Market Trading'
     },
     {
-      image: '../../assets/images/Daily Vlogger (2).png',
+      image: '../../assets/images/2.png',
       text: 'We are Real Traders'
     },
     {
-      image: '../../assets/images/Daily Vlogger (3).png',
-      text: 'Offline Batches'
+      image: '../../assets/images/3.png',
+      text: '1 TO 1 Mentorship'
     }
   ];
 
@@ -65,7 +61,7 @@ courses = [
       el.classList.add('visible');
     }
   });
-    const sections = ['home', 'about', 'course','testimonial'];
+    const sections = ['home', 'about', 'course','contact-us','testimonial'];
     for (let section of sections) {
       const element = document.getElementById(section);
       if (element) {
@@ -78,4 +74,10 @@ courses = [
     }
   }
 
+  scroll(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
