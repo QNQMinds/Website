@@ -10,7 +10,7 @@ import { OlaMaps } from 'olamaps-web-sdk'
   styleUrl: './contact-us.component.scss'
 })
 export class ContactUsComponent {
-
+email:any='qnqmind@gmail.com'
   olaMaps: any;
   mapInstance: any;
 

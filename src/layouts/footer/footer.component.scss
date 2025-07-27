@@ -1,12 +1,5 @@
-footer::before{
-        content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.83);
-    z-index: 0;
-}
-.bg{
-    background: #dc3545;
-    color: white;
-    height: 100px;
+.footerClass{
+        background: black;
+    padding: 40px 1px;
+    margin-top: 50px;
 }

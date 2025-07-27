@@ -142,7 +142,7 @@ html {
 }
 
 .hero-section {
-  margin-top: 4.8%;
+  margin-top: 6.5%;
   background: url('../../assets/sharemarket.avif') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
@@ -272,4 +272,15 @@ html {
   background: #dc3545;
     color: white;
     height: 100px;
+}
+
+.testimonial-card {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 400px;
+  color: #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
