@@ -28,6 +28,7 @@
     "ngx-owl-carousel-o": "^20.0.0",
     "ngx-spinner": "^19.0.0",
     "ngx-toastr": "^19.0.0",
+    "olamaps-web-sdk": "^1.1.2",
     "owl.carousel": "^2.3.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -3,6 +3,7 @@ import { HomePageComponent } from '../components/home-page/home-page.component';
 import { CourcesPageComponent } from '../components/cources-page/cources-page.component';
 import { AboutComponent } from '../components/about/about.component';
 import { RegisterPageComponent } from '../components/register-page/register-page.component';
+import { ContactUsComponent } from '../components/contact-us/contact-us.component';
 
 export const routes: Routes = [
     {
@@ -16,7 +17,8 @@ export const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: 'course', component: CourcesPageComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'register', component: RegisterPageComponent }
+      { path: 'register', component: RegisterPageComponent },
+      { path: 'contact-us', component: ContactUsComponent }
     ],
   },
 ];

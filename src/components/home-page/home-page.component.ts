@@ -7,11 +7,12 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HeaderComponent } from '../../layouts/header/header.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { FooterComponent } from '../../layouts/footer/footer.component';
+import { ContactUsComponent } from '../contact-us/contact-us.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [AboutComponent,CourcesPageComponent,CarouselModule,HeaderComponent,TestimonialsComponent,FooterComponent],
+  imports: [AboutComponent,CourcesPageComponent,CarouselModule,HeaderComponent,TestimonialsComponent,FooterComponent,ContactUsComponent,FooterComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
