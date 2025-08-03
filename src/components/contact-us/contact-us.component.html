@@ -2,45 +2,73 @@
     <div class="col-md-6 col-sm-12">
         <div id="ola-map" class="map-container"></div>
         <div class="mt-4 mb-4">
-        <div>
-            QNQ MINDS SHARE MARKET CLASSES,
+            <div>
+                QNQ MINDS SHARE MARKET CLASSES,
+            </div>
+            <div>
+                SHOP NO 6, SAI SHRUSHTI COMMERCIAL, OPP BHARAT PETROL PUMP, CHAUDHARY PARK,
+            </div>
+            <div>
+                WAKAD, PUNE , MAHARASHTRA -411057
+            </div>
+            <div style="color: #ffc107">
+                ✉: {{email}}
+            </div>
         </div>
-        <div>
-            SHOP NO 6, SAI SHRUSHTI COMMERCIAL, OPP BHARAT PETROL PUMP, CHAUDHARY PARK,
-        </div>
-        <div>
-             WAKAD, PUNE , MAHARASHTRA -411057
-        </div>
-        <div style="color: #ffc107">
-            ✉: {{email}}
-        </div>
-    </div>
     </div>
     <div class="col-md-6 col-sm-12">
 
         <div class="form-container">
             <h2 class="text-center form-title mb-4">Contact Us</h2>
-            <form>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name"
-                        required />
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                        formControlName="name" />
+                    <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+                        class="text-danger">
+                        Name is required
+                    </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="mobile" class="form-label">Mobile Number</label>
-                    <input type="tel" class="form-control" id="mobile" name="mobile"
-                        placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+                    <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number"
+                        formControlName="mobile" />
+                    <div *ngIf="contactForm.get('mobile')?.invalid && contactForm.get('mobile')?.touched"
+                        class="text-danger">
+                        Enter a valid 10-digit mobile number
+                    </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message..."
-                        required></textarea>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message..."
+                        formControlName="message"></textarea>
+                    <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+                        class="text-danger">
+                        Message is required
+                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-yellow w-100">Submit</button>
+                <button type="submit" class="btn btn-yellow w-100" [disabled]="contactForm.invalid" [disabled]="loader">
+                     <span *ngIf="loader" class="custom-spinner me-1"></span>
+                     {{ loader ? 'Submitting...' : 'Submit' }}
+                </button>
             </form>
+
         </div>
     </div>
+</div>
+
+<!-- custom-alert.component.html -->
+<div class="custom-alert-backdrop"  [style.display]="alertVisible ? 'flex' : 'none'">
+  <div class="custom-alert">
+    <div class="custom-alert-icon" [ngClass]="type">
+      {{ icon }}
+    </div>
+    <h2 class="custom-alert-title">{{ alertTitle }}</h2>
+    <p class="custom-alert-message">{{ alertMessage }}</p>
+    <button class="custom-alert-btn" (click)="closeAlert()">OK</button>
+  </div>
 </div>

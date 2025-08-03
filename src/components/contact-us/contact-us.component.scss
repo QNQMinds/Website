@@ -37,3 +37,97 @@
   width: 100%;
   height: 400px;
 }
+
+// Swal Popup Styles
+.custom-alert-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
+
+.custom-alert {
+  background: #111111;
+  border: 1px solid #FFD700;
+  padding: 20px 25px;
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.custom-alert-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.custom-alert-icon.success {
+  color: #00ff88;
+}
+
+.custom-alert-icon.error {
+  color: #ff4d4d;
+}
+
+.custom-alert-title {
+  color: #FFD700;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.custom-alert-message {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.custom-alert-btn {
+  background: #FFD700;
+  color: #000;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.custom-alert-btn:hover {
+  background: #ffcc00;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+// Spinner CSS
+.custom-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000; /* Yellow border */
+  border-top: 2px solid transparent; /* Transparent top for spin effect */
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional: Button dark style */
+.btn-yellow {
+  background-color: #FFD700;
+  color: #111;
+  font-weight: bold;
+}
+
+.btn-yellow:disabled {
+  opacity: 0.8;
+}
